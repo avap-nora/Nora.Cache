@@ -1,7 +1,7 @@
 <?php
-namespace NoraCacheFake\Kernel;
+namespace NoraCacheFake;
 
-use Nora\Framework\Kernel\KernelInterface;
+use Nora\Kernel\KernelInterface;
 use Psr\SimpleCache\CacheInterface;
 
 class Kernel implements KernelInterface

@@ -7,8 +7,8 @@ use Cache\Adapter\Redis\RedisCachePool;
 use Cache\Bridge\SimpleCache\SimpleCacheBridge;
 use Cache\Prefixed\PrefixedCachePool;
 use PHPUnit\Framework\TestCase;
-use Nora\Framework\Bootstrap;
-use NoraCacheFake\Kernel\Kernel;
+use Nora\Kernel\Bootstrap;
+use NoraCacheFake\Kernel;
 use Redis;
 
 class CacheTest extends TestCase
