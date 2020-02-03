@@ -1,6 +1,7 @@
 <?php
 namespace NoraCacheFake\Kernel\Context;
 
+use Nora\Cache\Module\CacheModule;
 use Nora\Cache\Provide\RedisCacheProvider;
 use Nora\Cache\RedisClient;
 use Nora\Cache\RedisClientInterface;
@@ -12,22 +13,8 @@ class TestConfigurator extends AbstractKernelConfigurator
 {
     public function configure()
     {
-        // Redisをセットする
-        $this
-            ->bind(RedisClientInterface::class)
-            ->toConstructor(
-                RedisClient::class,
-                'host=redis_host,port=redis_port'
-            );
-        $this->bind()
-            ->annotatedWith('redis_host')
-            ->toInstance(getenv('REDIS_HOST'));
-        $this->bind()
-            ->annotatedWith('redis_port')
-            ->toInstance((int) getenv('REDIS_PORT'));
-        $this
-            ->bind(CacheInterface::class)
-            ->toProvider(RedisCacheProvider::class);
+        // Cacheをセットする
+        $this->install(new CacheModule());
     }
 }
 

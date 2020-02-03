@@ -1,10 +1,10 @@
 <?php
 namespace Nora\Cache\Module;
 
+use Nora\Architecture\DI\Configuration\AbstractConfigurator;
 use Nora\Cache\Provide\RedisCacheProvider;
 use Nora\Cache\RedisClient;
 use Nora\Cache\RedisClientInterface;
-use Nora\Framework\Kernel\AbstractKernelConfigurator;
 use Psr\SimpleCache\CacheInterface;
 use Redis;
 
